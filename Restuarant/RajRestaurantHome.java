@@ -6,16 +6,7 @@ import javax.swing.JPanel;
 import java.awt.event.*;
 import java.awt.*;
 
-// interface Restaurant{
-//     void welcomepage();
-//     void menu();
-//     void breakfast();
-//     void lunch();
-//     void dinner();
-//     void dessert();
-//     void drinks();
-    
-// }
+
 
 public class RajRestaurantHome{
 
