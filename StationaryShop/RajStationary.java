@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class RajStationary{
+    
     public static void main(String[] args) {
 
         JLabel label = new JLabel("Welcome to Raj stationary :]");
