@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -165,8 +164,6 @@ class Rajbankcondition extends Bankinformation{
     public double getDeposit(){
         return deposit;
     }
-
-
 }
 
 public class RajBank{
