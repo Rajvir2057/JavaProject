@@ -20,6 +20,8 @@ public class RajRestuarant {
         
         frame.getContentPane().setBackground(new Color(0xE8F8FC));
 
+        
+
     }
 
 }
