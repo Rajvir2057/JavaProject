@@ -20,19 +20,19 @@ public class Timegreeting{
         
         // if for getting the input to greet..
         
-        if((hour <= 1) && (minute >= 0)){
+        if((hour >= 1) && (hour <= 11) && (minute >=0)){
             System.out.println(name + ", Good Morning!");
         }
 
-        else if((hour <= 12) && (minute >= 0)){
+        else if((hour >= 12) && (hour <= 16) && (minute >= 0)){
             System.out.println(name + ", Good Afternoon!");
         }
 
-        else if((hour <= 18) && (minute >= 0)){
+        else if((hour >= 17) &&(hour <= 19) && (minute >= 0)){
             System.out.println(name + ", Good Evening!");
         }
         
-        else if((hour <= 21) && (minute >= 0)){
+        else if((hour >= 21)&&(hour <= 24) && (minute >= 0)){
             System.out.println(name + ", Good Night!");
         }
 
