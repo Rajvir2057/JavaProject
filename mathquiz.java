@@ -5,7 +5,6 @@ public class mathquiz {
     // decalaring fields.
     public String name;
 
-
     // creating scanner for user input.
     Scanner gameinput = new Scanner(System.in);
 
@@ -55,7 +54,7 @@ public class mathquiz {
             // return methods for the game.
         public void addition(){
 
-        int[][] questions = {{2, 2}, {5, 7}, {10, 3}, {15, 9}, {8, 4}, {12, 6}, {20, 11}, {16, 8}, {25, 13}, {30, 17}};
+        int[][] questions = {{2, 2}, {5, 7}, {10, 3}, {15, 9}, {8, 4}, {12, 6}, {20, 11}, {167, 8}, {25, 13}, {30, 17}};
 
         System.out.println (" Addition Edition!");
 

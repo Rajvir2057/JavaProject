@@ -24,7 +24,7 @@ public class Bank{
 
     // creating methods.
     // this one is for taking data from the customer.
-    public void customerinformation(){
+    public void customerInformation(){
 
         System.out.println("Welcome to Rajbank.");
 
@@ -47,21 +47,21 @@ public class Bank{
 
         switch(choice){
             case 1:
-                withDraw();
+            withdrawMethod();
                 break;
             case 2:
-                DePosit();
+            depositMethod();
                 break;
             case 3:
-                System.exit(0);
+                System.exit(0); //(0 here means ending the code succesfully)
                 break;
-            default:
+            default:    // Code to execute if none of the case values match expression
                 System.out.println(name + ", you have entered an invalid choice.");
                 break;
         }
     }
 
-    public void withDraw(){
+    public void withdrawMethod(){
         System.out.print("Enter the amount to withdraw: ");
         withdraw = customerdata.nextInt();
 
@@ -70,11 +70,11 @@ public class Bank{
 
     }
 
-    public void DePosit(){
+    public void depositMethod(){
         System.out.print("Enter the amount to deposit: ");
         deposit = customerdata.nextInt();
 
-        cash = DepositingCash();
+        cash= depositingCash();
         System.out.println(name + " you have deposited: " + deposit + " your balance now is =  "+ cash);
 
     }
@@ -84,13 +84,13 @@ public class Bank{
         return cash - withdraw;
     }
     
-    public double DepositingCash(){
+    public double depositingCash(){
         return cash + deposit;
     }
 
     // creating condtions for succesful entry 
     public void bankConditions(){
-        if(age <= 18){
+        if(age <= 17){
             System.out.println(name + ", you are under 18 years old to hava a bank account.");
         }
 
@@ -113,7 +113,7 @@ public class Bank{
     }
     public static void main(String[] args) {
         Bank Customer = new Bank("", 0, 0, 0, 0);
-        Customer.customerinformation();
+        Customer.customerInformation();
         Customer.bankConditions();
         System.out.println(Customer.name + ", Thank you for choosing RajBank.");
 
