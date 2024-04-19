@@ -44,6 +44,7 @@ public class Timegreeting{
     }
 }
 
-// need a try block here.  for negative time and string input..
+// need a try block here.  
+//for negative time and string input..
 // interface if possible 
 // inheritence.. 
