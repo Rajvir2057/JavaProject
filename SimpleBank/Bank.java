@@ -121,3 +121,4 @@ public class Bank{
     }
 
 }
+// need a try block here.  for negative time and string input..

@@ -43,3 +43,7 @@ public class Timegreeting{
         input.close();
     }
 }
+
+// need a try block here.  for negative time and string input..
+// interface if possible 
+// inheritence.. 
