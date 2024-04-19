@@ -14,6 +14,6 @@ public class RestaurantMenu {
     public static void main(String[] args) {
         new RestaurantMenu();
     }
-} {
+} 
     
-}
+

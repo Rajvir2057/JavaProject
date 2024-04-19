@@ -7,15 +7,13 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class RajRestaurantHome{
-
-    public static void main(String[] args) {
+    public static void main(String[] args){
         
         JFrame frame = new JFrame("Raj Restaurant");
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.getContentPane().setBackground(new Color(0xD8D8FF));
-
 
         JLabel restLogo = new JLabel(new ImageIcon("rest1.png"));
         restLogo.setBounds(165, 20, 140, 100);
