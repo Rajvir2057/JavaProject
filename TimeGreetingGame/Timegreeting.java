@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 interface timestructure{
 
@@ -42,14 +43,23 @@ class Timegame implements timestructure{
         System.out.print("Enter your name please: ");
         name = gameinput.nextLine();
 
+        try{
         System.out.print("Enter the hour: ");
         hour = gameinput.nextInt();
 
         System.out.print("Enter the minute: ");
         minute = gameinput.nextInt();
 
-        gameinput.close();
-        
+        if(hour < 0 && minute < 59){
+            throw new Exception("invalid hour and minute! pls be sure of the time.");
+        }
+        }catch(InputMismatchException e ){
+            System.out.println("you entered wrong time int value.");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+            gameinput.close();
+        }
     }
 
     @Override
@@ -94,6 +104,7 @@ class Timecalculation extends Timegame{
 //base class for implementation.
 public class Timegreeting{
     public static void main(String[] args){
+        
         // forming the objects out of the classes..
         Timecalculation timegame = new Timecalculation("",0,0 );
 
@@ -103,4 +114,3 @@ public class Timegreeting{
         timegame.timecalculationMethod();
     }
 }
-

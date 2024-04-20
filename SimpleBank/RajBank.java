@@ -1,19 +1,35 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-public class Bank{
+interface Mybank{
 
+    String bankname = "Rajvir_Bank";
+    void customerInformation();
+    void withdrawMethod();
+    void depositMethod();
+    double depositingCash();
+    double withdrawingCash();
+    void bankConditions();
+    
+}
+
+class Bankinformation implements Mybank{
+
+    // here will be user data input..
     // declaring the options..
-    public String name;
-    public int age;
-    public double cash;
-    public double withdraw;
-    public double deposit;
+    protected String name;
+    protected int age;
+    protected double cash;
+    protected double withdraw;
+    protected double deposit;
   
     // scanner 
     Scanner customerdata = new Scanner(System.in);
 
     // constructor..
-    public Bank( String n, int a ,double c, double w , double d){
+    public Bankinformation( String n, int a ,double c, double w , double d){
         this.name = n;
         this.age = a;
         this.cash = c;
@@ -23,10 +39,8 @@ public class Bank{
 
     // creating methods.
     // this one is for taking data from the customer.
-
+    @Override
     public void customerInformation(){
-
-        System.out.println("Welcome to Rajbank.");
 
         System.out.print("Enter your name: ");
         name = customerdata.nextLine();
@@ -61,6 +75,8 @@ public class Bank{
         }
     }
 
+    // creating condtions for succesful entry.
+    @Override
     public void withdrawMethod(){
         System.out.print("Enter the amount to withdraw: ");
         withdraw = customerdata.nextInt();
@@ -70,26 +86,44 @@ public class Bank{
 
     }
 
+    @Override
     public void depositMethod(){
-        
+
         System.out.print("Enter the amount to deposit: ");
         deposit = customerdata.nextInt();
 
         cash= depositingCash();
         System.out.println(name + " you have deposited: " + deposit + " your balance now is =  "+ cash);
+        customerdata.nextLine();
 
     }
 
     // calculating the withdraw and deposit..
-    public double withdrawingCash(){
-        return cash - withdraw;
-    }
-    
+    @Override
     public double depositingCash(){
         return cash + deposit;
     }
 
+    @Override
+    public double withdrawingCash(){
+        return cash - withdraw;
+    }
+    
+    @Override 
+    public void bankConditions(){
+
+    }
+
+}
+
+class Rajbankcondition extends Bankinformation{
+
+    public Rajbankcondition(String n, int a ,double c, double w , double d){
+        super( n,  a , c,  w , d);
+    }
+
     // creating condtions for succesful entry 
+    @Override
     public void bankConditions(){
 
         if(age <= 17){
@@ -113,15 +147,20 @@ public class Bank{
             System.out.println(name + ", you have no cash to deposit.");
         }
     }
+}
+
+public class RajBank{
 
     public static void main(String[] args){
 
-        Bank Customer = new Bank("", 0, 0, 0, 0);
+        Rajbankcondition bank = new Rajbankcondition(" ", 0, 0, 0, 0);
 
-        Customer.customerInformation();
-        Customer.bankConditions();
+        System.out.println( "\t"+ "\t" +"  Welcome To " + Mybank.bankname);
 
-        System.out.println(Customer.name + ", Thank you for choosing RajBank.");
+        bank.customerInformation();
+        bank.bankConditions();
+
+        System.out.println(bank.name + ", Thank you for choosing " +"\n"+ "\t"+ Mybank.bankname);
 
     }
 }
