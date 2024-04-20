@@ -1,25 +1,74 @@
 import java.util.Scanner;
 
-public class Timegreeting{
-    public static void main(String[] args){
+interface timestructure{
 
+    String Time = "Simple_Time_Game";
+    void timegameInput();
+    void timecalculationMethod();
+}
+
+class Timegame implements timestructure{
+
+    // declaring the fields.
+    protected String name;
+    protected int hour;
+    protected int minute;
+
+    // creating a constructor.
+    public Timegame(String name, int hour, int minute){
+        this.name = name;
+        this.hour = hour;
+        this.minute = minute;
+    }
+    @Override
+    public void timegameInput(){
+        
         //To show what output format is needed.
-        System.out.println("please enter the time in 24 hr timing..");
+        System.out.println("\t"+"Please, Enter The Time In 24 Hour Timing");
+        
+        System.out.println("\t"+"...........");
+        System.out.println("\t"+".    12   .");
+        System.out.println("\t"+".11      1.");
+        System.out.println("\t"+".10      2.");
+        System.out.println("\t"+".9   *   3.");
+        System.out.println("\t"+".8       4.");
+        System.out.println("\t"+".7       5.");
+        System.out.println("\t"+".    6    .");
+        System.out.println("\t"+"...........");
 
         // creating a scanner to take the hour and min from the user.
-        Scanner input = new Scanner(System.in);
+        Scanner gameinput = new Scanner(System.in);
         
         System.out.print("Enter your name please: ");
-        String name = input.nextLine();
+        name = gameinput.nextLine();
 
         System.out.print("Enter the hour: ");
-        int hour = input.nextInt();
+        hour = gameinput.nextInt();
 
         System.out.print("Enter the minute: ");
-        int minute = input.nextInt();
+        minute = gameinput.nextInt();
+
+        gameinput.close();
+        
+    }
+
+    @Override
+    public void timecalculationMethod(){
+        // inorder to over ride in the sub class..
+}
+}
+
+class Timecalculation extends Timegame{
+
+    public Timecalculation(String name , int hour,int minute){
+        super(name, hour, minute);
+    }
+    //using the timecalc method created..
+    @Override
+    public void timecalculationMethod(){
         
         // if for getting the input to greet..
-        
+
         if((hour >= 1) && (hour <= 11) && (minute >=0)){
             System.out.println(name + ", Good Morning!");
         }
@@ -39,12 +88,19 @@ public class Timegreeting{
         else{
         System.out.println("hmmm... wonder y.");
         }
-        // if you dont know the time... 
-        input.close();
+    
+    }
+}
+//base class for implementation.
+public class Timegreeting{
+    public static void main(String[] args){
+        // forming the objects out of the classes..
+        Timecalculation timegame = new Timecalculation("",0,0 );
+
+        System.out.println("\t"+"    Welcome to the " + "\""+timestructure.Time+ "\"");
+
+        timegame.timegameInput();
+        timegame.timecalculationMethod();
     }
 }
 
-// need a try block here.  
-//for negative time and string input..
-// interface if possible 
-// inheritence.. 

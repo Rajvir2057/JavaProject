@@ -9,7 +9,6 @@ public class Bank{
     public double withdraw;
     public double deposit;
   
-
     // scanner 
     Scanner customerdata = new Scanner(System.in);
 
@@ -24,6 +23,7 @@ public class Bank{
 
     // creating methods.
     // this one is for taking data from the customer.
+
     public void customerInformation(){
 
         System.out.println("Welcome to Rajbank.");
@@ -71,6 +71,7 @@ public class Bank{
     }
 
     public void depositMethod(){
+        
         System.out.print("Enter the amount to deposit: ");
         deposit = customerdata.nextInt();
 
@@ -90,6 +91,7 @@ public class Bank{
 
     // creating condtions for succesful entry 
     public void bankConditions(){
+
         if(age <= 17){
             System.out.println(name + ", you are under 18 years old to hava a bank account.");
         }
@@ -111,14 +113,16 @@ public class Bank{
             System.out.println(name + ", you have no cash to deposit.");
         }
     }
-    public static void main(String[] args) {
+
+    public static void main(String[] args){
+
         Bank Customer = new Bank("", 0, 0, 0, 0);
+
         Customer.customerInformation();
         Customer.bankConditions();
+
         System.out.println(Customer.name + ", Thank you for choosing RajBank.");
 
-
     }
-
 }
 // need a try block here.  for negative time and string input..

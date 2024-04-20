@@ -25,7 +25,6 @@ public class RajStationary{
 
         frame.getContentPane().setBackground(new Color(0XFCF0F8));
 
-
         // creating labels for the frame.
         
     }
