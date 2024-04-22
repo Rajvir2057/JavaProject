@@ -23,7 +23,7 @@ public class RajRestaurantHome{
         JFrame frame = new JFrame("Raj Restaurant");
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
+        frame.setSize(466, 400);
         frame.getContentPane().setBackground(new Color(0xD8D8FF));
 
         JLabel restLogo = new JLabel(new ImageIcon("rest1.png"));
@@ -37,9 +37,14 @@ public class RajRestaurantHome{
         welcomePanel.setBackground(new Color(0x7AEB7A));
         welcomePanel.add(welcomeLabel);
 
-        JLabel forMenu = new JLabel("Click on the b button for breakfast and L and D for lunch and dinner.");
+        JLabel forMenu = new JLabel("Click on the B button for breakfast ");
+        JLabel forMenu2 = new JLabel("and L and D for lunch and dinner..");
+
         forMenu.setBounds(85, 200, 350, 50);
+        forMenu2.setBounds(89, 210, 350, 50);
+
         forMenu.setFont(new Font("Ebrima", Font.PLAIN, 15));
+        forMenu2.setFont(new Font("Ebrima", Font.PLAIN, 15));
 
         JButton breakfastButton = new JButton("B-MENU");
         breakfastButton.setBounds(200, 250, 70, 30);
@@ -47,6 +52,7 @@ public class RajRestaurantHome{
         frame.add(restLogo);
         frame.add(welcomePanel);
         frame.add(forMenu);
+        frame.add(forMenu2);
         frame.add(breakfastButton);
 
         breakfastButton.addActionListener(new ActionListener() {

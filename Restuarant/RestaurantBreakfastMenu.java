@@ -1,7 +1,7 @@
 import java.awt.Font;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class RestaurantBreakfastMenu {
@@ -16,10 +16,11 @@ public class RestaurantBreakfastMenu {
 
         JLabel label = new JLabel("You can take a look at the breakfast menu.");
         label.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+        label.setBounds(50, 20, 400, 30);
+        frame.add(label);
 
         // here is a table creation.
         JTable Breakfastdata;
-
         String[][] data ={{"sandwitch","5000","2_pieces"},
                           {"Chappati","2000","2_pieces"},
                           {"springroll","8000","3_pieces"},
@@ -32,8 +33,12 @@ public class RestaurantBreakfastMenu {
         String[] columnNames = {"Item","Price","Quantity"};
         Breakfastdata = new JTable(data, columnNames);
 
-        Breakfastdata.setBounds(60, 60, 200,300);
-        
+        JScrollPane scrollPane = new JScrollPane(Breakfastdata);
+        scrollPane.setBounds(50, 60, 400, 300);
+
+        frame.add(scrollPane);
+
+
     }
 
     public static void main(String[] args) {
