@@ -6,6 +6,17 @@ import javax.swing.JPanel;
 import java.awt.event.*;
 import java.awt.*;
 
+// interface Restaurant{
+//     void welcomepage();
+//     void menu();
+//     void breakfast();
+//     void lunch();
+//     void dinner();
+//     void dessert();
+//     void drinks();
+    
+// }
+
 public class RajRestaurantHome{
     public static void main(String[] args){
         
@@ -26,25 +37,26 @@ public class RajRestaurantHome{
         welcomePanel.setBackground(new Color(0x7AEB7A));
         welcomePanel.add(welcomeLabel);
 
-        JLabel forMenu = new JLabel("Click on MENU to check out our restaurant Menu");
+        JLabel forMenu = new JLabel("Click on the b button for breakfast and L and D for lunch and dinner.");
         forMenu.setBounds(85, 200, 350, 50);
         forMenu.setFont(new Font("Ebrima", Font.PLAIN, 15));
 
-        JButton menuButton = new JButton("MENU");
-        menuButton.setBounds(200, 250, 70, 30);
+        JButton breakfastButton = new JButton("B-MENU");
+        breakfastButton.setBounds(200, 250, 70, 30);
 
         frame.add(restLogo);
         frame.add(welcomePanel);
         frame.add(forMenu);
-        frame.add(menuButton);
+        frame.add(breakfastButton);
 
-        menuButton.addActionListener(new ActionListener() {
+        breakfastButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                if(e.getSource() == menuButton){
+                if(e.getSource() == breakfastButton){
                     
-                    new RestaurantMenu();
+                    new RestaurantBreakfastMenu();
                     
                 }
             }
