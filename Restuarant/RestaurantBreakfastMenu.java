@@ -1,7 +1,10 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -56,6 +59,42 @@ public class RestaurantBreakfastMenu {
         JLabel imageLabel3 = new JLabel(image3);
         imageLabel3.setBounds(350, 199, 250, 250);
         frame.add(imageLabel3);
+
+        JButton back1 = new JButton("BACK");
+        back1.setBounds(50, 400, 100, 30);
+        frame.add(back1);
+
+        JButton lunchButton = new JButton("L-Menu");
+        lunchButton.setBounds(300, 400, 100, 30);
+        frame.add(lunchButton);
+
+        back1.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(e.getSource() == back1){
+                    
+                    new RajRestaurantHome();
+                    
+                }
+            }
+    
+        });
+
+        lunchButton.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(e.getSource() == lunchButton){
+                    
+                    new RestaurantLunchMenu();
+                    
+                }
+            }
+    
+        });
 
     }
 

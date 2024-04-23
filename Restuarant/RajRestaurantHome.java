@@ -18,92 +18,96 @@ import java.awt.*;
 // }
 
 public class RajRestaurantHome{
-    public static void main(String[] args){
+
+    public RajRestaurantHome(){  
         
         JFrame frame = new JFrame("Raj Restaurant");
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(466, 400);
-        frame.getContentPane().setBackground(new Color(0xD8D8FF));
+            frame.setLayout(null);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(466, 430);
+            frame.getContentPane().setBackground(new Color(0xD8D8FF));
 
-        JLabel restLogo = new JLabel(new ImageIcon("rest1.png"));
-        restLogo.setBounds(165, 20, 140, 100);
+            JLabel restLogo = new JLabel(new ImageIcon("rest1.png"));
+            restLogo.setBounds(165, 20, 140, 100);
 
-        JLabel welcomeLabel = new JLabel("WELCOME TO RAJ RESTAURANT");
-        welcomeLabel.setFont(new Font("Times New Roman", Font.ITALIC, 15));
+            JLabel welcomeLabel = new JLabel("WELCOME TO RAJ RESTAURANT");
+            welcomeLabel.setFont(new Font("Times New Roman", Font.ITALIC, 15));
 
-        JPanel welcomePanel = new JPanel();
-        welcomePanel.setBounds(130, 140, 230, 40);
-        welcomePanel.setBackground(new Color(0x7AEB7A));
-        welcomePanel.add(welcomeLabel);
+            JPanel welcomePanel = new JPanel();
+            welcomePanel.setBounds(130, 140, 230, 40);
+            welcomePanel.setBackground(new Color(0x7AEB7A));
+            welcomePanel.add(welcomeLabel);
 
-        JLabel forMenu = new JLabel("Click on the B button for breakfast ");
-        JLabel forMenu2 = new JLabel("and L and D for lunch and dinner..");
+            JLabel forMenu = new JLabel("Click on the B button for breakfast ");
+            JLabel forMenu2 = new JLabel("and L and D for lunch and dinner..");
 
-        forMenu.setBounds(110, 200, 350, 50);
-        forMenu2.setBounds(110, 220, 350, 50);
+            forMenu.setBounds(110, 200, 350, 50);
+            forMenu2.setBounds(110, 220, 350, 50);
 
-        forMenu.setFont(new Font("Ebrima", Font.PLAIN, 15));
-        forMenu2.setFont(new Font("Ebrima", Font.PLAIN, 15));
+            forMenu.setFont(new Font("Ebrima", Font.PLAIN, 15));
+            forMenu2.setFont(new Font("Ebrima", Font.PLAIN, 15));
 
-        JButton breakfastButton = new JButton("B-MENU");
-        breakfastButton.setBounds(170, 260, 110, 30);
-        
-        JButton lunchButton = new JButton("L-Menu");
-        lunchButton.setBounds(170, 300, 110, 30);
-        
-        JButton dinnerButton = new JButton("D-Menu");
-        dinnerButton.setBounds(170, 340, 110, 30);
-
-        frame.add(restLogo);
-        frame.add(welcomePanel);
-        frame.add(forMenu);
-        frame.add(forMenu2);
-        frame.add(breakfastButton);
-        frame.add(lunchButton);
-        frame.add(dinnerButton);
-
-        breakfastButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                if(e.getSource() == breakfastButton){
-                    
-                    new RestaurantBreakfastMenu();
-                    
-                }
-            }
-        });
-
-        lunchButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                if(e.getSource() == lunchButton){
-                    
-                    new RestaurantLunchMenu();
-                    
-                }
-            }
-        });
-        
-        dinnerButton.addActionListener(new ActionListener() {
+            JButton breakfastButton = new JButton("B-MENU");
+            breakfastButton.setBounds(170, 260, 110, 30);
             
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                if(e.getSource() == dinnerButton){
+            JButton lunchButton = new JButton("L-Menu");
+            lunchButton.setBounds(170, 300, 110, 30);
+            
+            JButton dinnerButton = new JButton("D-Menu");
+            dinnerButton.setBounds(170, 340, 110, 30);
+
+            frame.add(restLogo);
+            frame.add(welcomePanel);
+            frame.add(forMenu);
+            frame.add(forMenu2);
+            frame.add(breakfastButton);
+            frame.add(lunchButton);
+            frame.add(dinnerButton);
+
+            breakfastButton.addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
                     
-                    new RestaurantDinnerMenu();
-                    
+                    if(e.getSource() == breakfastButton){
+                        
+                        new RestaurantBreakfastMenu();
+                        
+                    }
                 }
-            }
-        });
+            });
+
+            lunchButton.addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    
+                    if(e.getSource() == lunchButton){
+                        
+                        new RestaurantLunchMenu();
+                        
+                    }
+                }
+            });
+            
+            dinnerButton.addActionListener(new ActionListener() {
+                
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    
+                    if(e.getSource() == dinnerButton){
+                        
+                        new RestaurantDinnerMenu();
+                        
+                    }
+                }
+            });
 
 
-        frame.setVisible(true);
-
-    }
+            frame.setVisible(true);}
+        public static void main(String[] args){
+            new RajRestaurantHome();
+        }
 }
+
+    
