@@ -7,32 +7,38 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class RestaurantBreakfastMenu {
+public class RestaurantLunchMenu {
     
-    public RestaurantBreakfastMenu() {
+    public RestaurantLunchMenu() {
         
-        JFrame frame = new JFrame("Restaurant Menu for Breakfast.");
+        JFrame frame = new JFrame("Restaurant Menu for Lunch.");
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 480);
         frame.getContentPane().setBackground(new Color(0xD8D8FF));
         frame.setVisible(true);
 
-        JLabel label = new JLabel("You can take a look at the breakfast menu.");
+        JLabel label = new JLabel("You can take a look at the lunch menu.");
         label.setFont(new Font("Times New Roman", Font.ITALIC, 15));
         label.setBounds(50, 20, 400, 30);
         frame.add(label);
 
         // here is a table creation.
         JTable Breakfastdata;
-        String[][] data ={{"sandwitch","5000","2_pieces"},
-                          {"Chappati","2000","2_pieces"},
-                          {"springroll","8000","3_pieces"},
-                          {"cupcakes","2500","1_pieces"},
-                          {"samosas","9000","2_pieces"},
-                          {"cinamon rolls","3000","3_pieces"},
-                          {"dora cakes","4000","2_pieces"},
-                          {"apple_pies","10,000","4_pieces"},};
+        String[][] data ={  {"sandwich", "24000", "1"},
+                            {"salad", "26000", "1"},
+                            {"soup", "24500", "1"},
+                            {"wrap", "25500", "1"},
+                            {"fruit", "23000", "1"},
+                            {"yogurt", "27000", "1"},
+                            {"pasta", "25000", "1"},
+                            {"rice bowl", "25200", "1"},
+                            {"roti", "24750", "2"},
+                            {"dal", "23800", "1"},
+                            {"sabzi", "24300", "1"},
+                            {"curry", "24900", "1"},
+                            {"biryani", "24800", "1"},
+                            {"lassi", "25500", "1"}};
 
         String[] columnNames = {"Item","Price","Quantity"};
         Breakfastdata = new JTable(data, columnNames);
@@ -46,8 +52,8 @@ public class RestaurantBreakfastMenu {
         ImageIcon image1 = new ImageIcon();
         ImageIcon image3 = new ImageIcon();
 
-        image1 = new ImageIcon("sand.png");
-        image3 = new ImageIcon("cup.png");
+        image1 = new ImageIcon("soup.png");
+        image3 = new ImageIcon("naan.png");
 
         JLabel imageLabel1 = new JLabel(image1);
         imageLabel1.setBounds(50, 220, 300,157);
@@ -60,7 +66,7 @@ public class RestaurantBreakfastMenu {
     }
 
     public static void main(String[] args) {
-        new RestaurantBreakfastMenu();
+        new RestaurantLunchMenu();
     }
 } 
     

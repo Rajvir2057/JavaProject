@@ -40,20 +40,28 @@ public class RajRestaurantHome{
         JLabel forMenu = new JLabel("Click on the B button for breakfast ");
         JLabel forMenu2 = new JLabel("and L and D for lunch and dinner..");
 
-        forMenu.setBounds(85, 200, 350, 50);
-        forMenu2.setBounds(89, 210, 350, 50);
+        forMenu.setBounds(110, 200, 350, 50);
+        forMenu2.setBounds(110, 220, 350, 50);
 
         forMenu.setFont(new Font("Ebrima", Font.PLAIN, 15));
         forMenu2.setFont(new Font("Ebrima", Font.PLAIN, 15));
 
         JButton breakfastButton = new JButton("B-MENU");
-        breakfastButton.setBounds(200, 250, 70, 30);
+        breakfastButton.setBounds(170, 260, 110, 30);
+        
+        JButton lunchButton = new JButton("L-Menu");
+        lunchButton.setBounds(170, 300, 110, 30);
+        
+        JButton dinnerButton = new JButton("D-Menu");
+        dinnerButton.setBounds(170, 340, 110, 30);
 
         frame.add(restLogo);
         frame.add(welcomePanel);
         frame.add(forMenu);
         frame.add(forMenu2);
         frame.add(breakfastButton);
+        frame.add(lunchButton);
+        frame.add(dinnerButton);
 
         breakfastButton.addActionListener(new ActionListener() {
 
@@ -67,6 +75,33 @@ public class RajRestaurantHome{
                 }
             }
         });
+
+        lunchButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(e.getSource() == lunchButton){
+                    
+                    new RestaurantLunchMenu();
+                    
+                }
+            }
+        });
+        
+        dinnerButton.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(e.getSource() == dinnerButton){
+                    
+                    new RestaurantDinnerMenu();
+                    
+                }
+            }
+        });
+
 
         frame.setVisible(true);
 
