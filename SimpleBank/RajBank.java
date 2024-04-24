@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -147,6 +148,25 @@ class Rajbankcondition extends Bankinformation{
             System.out.println(name + ", you have no cash to deposit.");
         }
     }
+    // forming getter methods so that i can access my data to be used for i/o.
+    public String getName(){
+        return name;
+    }
+
+    public int getAge(){
+        return age;
+    }
+    public double getCash(){
+        return cash;
+    }
+    public double getWithdraw(){
+        return withdraw;
+    }
+    public double getDeposit(){
+        return deposit;
+    }
+
+
 }
 
 public class RajBank{
@@ -162,6 +182,15 @@ public class RajBank{
 
         System.out.println(bank.name + ", Thank you for choosing " +"\n"+ "\t"+ Mybank.bankname);
 
+        // adding to a txt file
+    
+        try{
+        BufferedWriter dataforbank = new BufferedWriter( new FileWriter("BankData.txt"));
+        dataforbank.write("Name: "+ bank.getName() + " " + "Age: "+bank.getAge() + " " +" Money removed/added: "+ bank.getCash() + " " + bank.getWithdraw() + " " + bank.getDeposit());
+        dataforbank.close();
+        }
+        catch(IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
-// need a try block here.
